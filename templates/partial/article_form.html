@@ -1,0 +1,24 @@
+   {% csrf_token %}
+    <div class="form_row">
+        <label for="summary">summary</label>
+        <input type="summary" id="summary" name="summary" value="{{task.summary}}">
+    </div>
+    <div class="form_row">
+        <label for="description">description</label>
+        <input type="description" id="description" name="description" value="{{task.description}}">
+    </div>
+    <select class="form-select" aria-label="type" name="type">
+        <option selected>type</option>
+        <option value="new"> Task</option>
+        <option value="progress"> Bug</option>
+        <option value="done"> Improvement</option>
+    </select>
+    <select class="form-select" aria-label="status" name="status">
+        <option selected>status</option>
+        <option value="New"> New</option>
+        <option value="In Process"> In Process</option>
+        <option value="STATUS_DONE"> STATUS_DONE</option>
+    </select>
+    <div class="form_row">
+        <input type="submit">
+    </div>

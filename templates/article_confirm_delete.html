@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block title %}confirm{% endblock %}
+{% block menu %}
+{% endblock %}
+{% block content  %}
+<style>
+.container {
+  padding: 0;
+  margin: 30px;
+}
+
+</style>
+<h1>Do you realy want to delete?</h1>
+<h2>{{ task.summary }}</h2>
+<form action="{%url 'confirm_delete' task.pk%}" method="post">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-danger">Yes</button>
+    <a href="{% url 'index' %}" class="btn btn-primary">No</a>
+</form>
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block title %} To do list {% endblock %}
+{% block menu %}
+{% endblock %}
+{% block content %}
+
+{% for task in tasks %}
+<h2>Summary: {{ task.summary }}</h2>
+<p> Description: {{ task.description }}</p>
+<p> Type: {{ task.type }}</p>
+<p> Status: {{ task.status }}</p>
+<p> DateTime of create : {{ task.created_at }}</p>
+<p> DateTime of update : {{ task.updated_at }}</p>
+
+<p><a href="{% url 'article_detail' task.pk %}"> Details </a></p>
+<p><a href="{% url 'article_update' task.pk %}"> Update </a></p>
+<p><a href="{% url 'article_delete' task.pk %}"> Delete </a></p>
+
+{% endfor %}
+{% endblock %}

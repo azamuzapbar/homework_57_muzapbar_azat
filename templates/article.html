@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block title %}To do{% endblock %}
+{% block menu %}
+{% endblock %}
+{% block content  %}
+<style>
+.container {
+  padding: 0;
+  margin: 30px;
+}
+
+</style>
+    <h2>Summary: {{ article.summary }}</h2>
+    <p> Description: {{ article.description }}</p>
+    <p> Type: {{ article.type }}</p>
+    <p> Status: {{ article.status }}</p>
+    <p> DateTime of create : {{ article.created_at }}</p>
+    <p> DateTime of update : {{ article.updated_at }}</p>
+{% endblock %}
